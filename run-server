@@ -1,0 +1,7 @@
+#!/bin/bash
+
+tensorboard --logdir /home/scientist/logs &
+PID_TENSORBOARD=$!
+jupyter notebook --no-browser --ip=*
+echo "Shutting down tensorboard..."
+kill -sigterm $PID_TENSORBOARD
